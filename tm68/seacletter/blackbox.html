@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Seacletter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#showmessage").on("click", function() {
+                $("div.modal").addClass("is-active");
+            })
+
+            $("#close, div.modal-background").on("click", function() {
+                $("div.modal").removeClass("is-active");
+            })
+        });
+    </script>
+</head>
+<body>
+<!-- NAVIGATION BAR -->
+<header>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <!-- LOGO -->
+            <a class="navbar-item" href="/">
+                <img src="https://pbs.twimg.com/media/EXpNoFPUEAAKX9f?format=png&name=900x900" width="112" height="28">
+            </a>
+            <!-- HAMBURGER MENU -->
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="my-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="my-menu">
+            <div class="navbar-end">
+                <a class="navbar-item is-grey" href="#">Top</a>
+                <a class="navbar-item is-grey" href="#">Create the room</a>
+                <a class="navbar-item is-grey" href="#">Enter the room</a>
+                <a class="navbar-item is-grey" href="#">About</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- MESSAGE -->
+<div></div>
+<!-- MAIN -->
+<main>
+    <section class="section is-medium">
+        <div class="container">
+            <div class="has-text-centered">
+                <h1 class="title">お題を取り出そう!</h1>
+                <p>何が出るかな!?</p>
+                <a id="showmessage">
+                <img src="https://pbs.twimg.com/media/EXpnEmTU8AAcZHg?format=png&name=360x360"  style="padding-top:30px;"/>
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="content has-text-centered">
+            2020 <strong>UTokyo Project Sprint</strong>
+        </div>
+        <div class="content has-text-centered">
+            <a href="#" class="has-text-dark">About</a> |
+            <a href="#" class="has-text-dark">Contact</a> |
+            <a href="#" class="has-text-danger">Report an issue</a>
+        </div>
+    </div>
+</footer>
+<div class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">出たのはコレ!</p>
+            <button class="delete" aria-label="close" id="close"></button>
+        </header>
+        <section class="modal-card-body">
+            <p>通勤にかかる時間</p>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-success"><a id="close">閉じる</a></button>
+        </footer>
+    </div>
+</div>
+</div>
+</div>
+<!-- FOR JAVASCRIPT -->
+<script>
+    <!-- FOR HAMBURGER MENU -->
+    for (const burder of document.getElementsByClassName('navbar-burger')) {
+        const menuId = burder.dataset.target;
+        const menu = document.getElementById(menuId);
+        burder.addEventListener('click', e => {
+            burder.classList.toggle('is-active');
+            menu.classList.toggle('is-active');
+        });
+    }
+</script>
+</body>
+</html>
