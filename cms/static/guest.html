@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Seacletter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+<!-- NAVIGATION BAR -->
+<header>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <!-- LOGO -->
+            <a class="navbar-item" href="/">
+                <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+            </a>
+            <!-- HAMBURGER MENU -->
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="my-menu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div class="navbar-menu" id="my-menu">
+            <div class="navbar-end">
+                <a class="navbar-item is-grey" href="#">Top</a>
+                <a class="navbar-item is-grey" href="#">Create the room</a>
+                <a class="navbar-item is-grey" href="#">Enter the room</a>
+                <a class="navbar-item is-grey" href="#">About</a>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- MESSAGE -->
+<div></div>
+<!-- MAIN -->
+<main>
+    <section class="hero is-medium is-black is-bold">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">名前と部屋番号を入力してください</h1>
+                <h2 class="subtitle">部屋に入場して、お題や秘密を投稿しよう!</h2>
+                <div class="field">
+                    <label class="label　is-white">名前を入力してください</label>
+                    <div class="control">
+                        <input class="input" type="text" name="" id="" value="" placeholder="名前を入力してください">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label　is-white">部屋番号を入力してください</label>
+                    <div class="control">
+                        <input class="input" type="text" name="" id="" value="" placeholder="部屋番号を入力してください">
+                    </div>
+                </div>
+                <p style="padding-top: 30px">  </p>
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-link" onclick="location.href='control.html'">Submit</button>
+                    </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="section is-medium">
+        <div class="container">
+            <div class="has-text-centered">
+                <h1 class="title">ヒント!</h1>
+                <p>ホストの人から教えてもらった部屋番号を入力してください。名前は自分の名前をニックネームでもよいので入力してください。</p>
+            </div>
+        </div>
+    </section>
+</main>
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="content has-text-centered">
+            2020 <strong>UTokyo Project Sprint</strong>
+        </div>
+        <div class="content has-text-centered">
+            <a href="#" class="has-text-dark">About</a> |
+            <a href="#" class="has-text-dark">Contact</a> |
+            <a href="#" class="has-text-danger">Report an issue</a>
+        </div>
+    </div>
+</footer>
+
+<!-- FOR JAVASCRIPT -->
+<script>
+    <!-- FOR HAMBURGER MENU -->
+    for (const burder of document.getElementsByClassName('navbar-burger')) {
+        const menuId = burder.dataset.target;
+        const menu = document.getElementById(menuId);
+        burder.addEventListener('click', e => {
+            burder.classList.toggle('is-active');
+            menu.classList.toggle('is-active');
+        });
+    }
+</script>
+</body>
+</html>
